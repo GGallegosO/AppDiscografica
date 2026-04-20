@@ -9,6 +9,14 @@ namespace AppDiscografica.Negocios
         // Instancia privada del DAO para interactuar con SQL
         private EventoDAO dao = new EventoDAO();
 
+
+        public List<Evento> BuscarEventos(string criterio)
+        {
+            // El negocio simplemente le pide al DAO que haga la búsqueda
+            return dao.BuscarEventos(criterio);
+        }
+
+
         // Obtiene la lista completa de eventos sin filtros adicionales
         public List<Evento> ObtenerListaEventos()
         {
@@ -38,7 +46,7 @@ namespace AppDiscografica.Negocios
 
         public string ActualizarEvento(Evento eventoEditado)
         {
-            // 1. Aplicamos las mismas reglas que al guardar
+            // Aplicamos las mismas reglas que al guardar
             if (string.IsNullOrWhiteSpace(eventoEditado.Nombre))
                 return "El nombre no puede estar vacío.";
 
@@ -46,7 +54,6 @@ namespace AppDiscografica.Negocios
                 return "El precio debe ser mayor a cero.";
 
             // Si todo está bien, le damos la orden al DAO
-            // (Asegúrate de que en el DAO el método se llame EditarEvento o similar)
             dao.ActualizarEvento(eventoEditado);
 
             return "OK";

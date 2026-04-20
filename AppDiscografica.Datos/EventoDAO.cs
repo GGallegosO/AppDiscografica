@@ -25,6 +25,18 @@ namespace AppDiscografica.Datos
             }
         }
 
+        //BUSCAR por nombre de artista o nombre del evento.
+        public List<Evento> BuscarEventos(string criterio)
+        {
+            using (var db = new AppDbContext())
+            {
+                // Buscamos donde el Nombre CONTENGA el criterio O el Artista CONTENGA el criterio
+                return db.Eventos
+                         .Where(e => e.Nombre.Contains(criterio) || e.ArtistaPrincipal.Contains(criterio))
+                         .ToList();
+            }
+        }
+
 
         // BUSCAR (Por ID): Para cargar datos antes de editar o borrar
         public Evento? BuscarPorId(int id)

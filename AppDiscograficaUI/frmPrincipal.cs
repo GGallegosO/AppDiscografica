@@ -63,7 +63,7 @@ namespace AppDiscograficaUI
             else { MessageBox.Show("Seleccione un evento para actualizar"); }
         }
 
-   
+
 
         private void dgvEventos_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -147,6 +147,37 @@ namespace AppDiscograficaUI
             }
 
 
+        }
+
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            string textoNombre = txtNombre.Text; 
+            string textoArtista = txtArtista.Text;
+
+            string textoBusqueda = "";
+
+            if (!string.IsNullOrWhiteSpace(textoNombre))
+            {
+                textoBusqueda = textoNombre;
+            }
+            // Si el Nombre está vacío, revisamos si escribió en el Artista
+            else if (!string.IsNullOrWhiteSpace(textoArtista))
+            {
+                textoBusqueda = textoArtista;
+            }
+
+            // Ahora sí, hacemos la búsqueda con el texto que hayamos encontrado
+            if (!string.IsNullOrWhiteSpace(textoBusqueda))
+            {
+                var resultados = negocio.BuscarEventos(textoBusqueda);
+                dgvEventos.DataSource = resultados;
+            }
+            else
+            {
+                MessageBox.Show("Por favor, escribe algo en el campo Nombre o Artista para buscar.");
+                dgvEventos.DataSource = negocio.ObtenerListaEventos();
+            }
         }
 
 

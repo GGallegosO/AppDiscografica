@@ -38,6 +38,7 @@
             btnEliminar = new Button();
             btnLimpiar = new Button();
             btnActualizar = new Button();
+            btnBuscar = new Button();
             ((System.ComponentModel.ISupportInitialize)dgvEventos).BeginInit();
             ((System.ComponentModel.ISupportInitialize)numPrecio).BeginInit();
             SuspendLayout();
@@ -73,7 +74,7 @@
             txtNombre.Location = new Point(128, 304);
             txtNombre.Name = "txtNombre";
             txtNombre.PlaceholderText = "Nombre";
-            txtNombre.Size = new Size(200, 23);
+            txtNombre.Size = new Size(216, 23);
             txtNombre.TabIndex = 2;
             // 
             // txtArtista
@@ -81,14 +82,16 @@
             txtArtista.Location = new Point(128, 352);
             txtArtista.Name = "txtArtista";
             txtArtista.PlaceholderText = "Artista";
-            txtArtista.Size = new Size(200, 23);
+            txtArtista.Size = new Size(216, 23);
             txtArtista.TabIndex = 3;
             // 
             // dtpFecha
             // 
+            dtpFecha.CustomFormat = "dd/MM/yyyy HH:mm";
+            dtpFecha.Format = DateTimePickerFormat.Custom;
             dtpFecha.Location = new Point(376, 304);
             dtpFecha.Name = "dtpFecha";
-            dtpFecha.Size = new Size(227, 23);
+            dtpFecha.Size = new Size(232, 23);
             dtpFecha.TabIndex = 4;
             dtpFecha.Value = new DateTime(2026, 4, 19, 23, 54, 36, 0);
             // 
@@ -118,7 +121,7 @@
             btnEliminar.BackColor = Color.WhiteSmoke;
             btnEliminar.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnEliminar.ForeColor = SystemColors.ControlText;
-            btnEliminar.Location = new Point(448, 400);
+            btnEliminar.Location = new Point(512, 400);
             btnEliminar.Name = "btnEliminar";
             btnEliminar.Size = new Size(96, 23);
             btnEliminar.TabIndex = 7;
@@ -146,6 +149,16 @@
             btnActualizar.UseVisualStyleBackColor = true;
             btnActualizar.Click += btnActualizar_Click;
             // 
+            // btnBuscar
+            // 
+            btnBuscar.Location = new Point(376, 400);
+            btnBuscar.Name = "btnBuscar";
+            btnBuscar.Size = new Size(96, 23);
+            btnBuscar.TabIndex = 10;
+            btnBuscar.Text = "Buscar";
+            btnBuscar.UseVisualStyleBackColor = true;
+            btnBuscar.Click += button1_Click;
+            // 
             // FrmPrincipal
             // 
             AccessibleName = "Nombre";
@@ -153,6 +166,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ControlDark;
             ClientSize = new Size(800, 450);
+            Controls.Add(btnBuscar);
             Controls.Add(btnActualizar);
             Controls.Add(btnLimpiar);
             Controls.Add(btnEliminar);
@@ -184,5 +198,6 @@
         private Button btnEliminar;
         private Button btnLimpiar;
         private Button btnActualizar;
+        private Button btnBuscar;
     }
 }
