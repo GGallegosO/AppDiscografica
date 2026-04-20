@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="AppDiscografica.Clases/AppDiscografica.Clases.csproj" />
+  <Project Path="AppDiscografica.Datos/AppDiscografica.Datos.csproj" Id="41435ecc-0ac2-4aca-b8de-23aeb0d3e810" />
+  <Project Path="AppDiscografica.Negocios/AppDiscografica.Negocios.csproj" Id="f2802465-7ec2-452c-88bd-9c6e91a18061" />
+  <Project Path="AppDiscograficaUI/AppDiscograficaUI.csproj" />
+</Solution>
