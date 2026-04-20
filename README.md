@@ -3,7 +3,6 @@
 [![.NET](https://img.shields.io/badge/.NET-5.0+-512bd4?style=for-the-badge&logo=dotnet)](https://dotnet.microsoft.com/)
 [![SQL Server](https://img.shields.io/badge/SQL%20Server-2019+-red?style=for-the-badge&logo=microsoft-sql-server)](https://www.microsoft.com/en-us/sql-server/)
 
-Este proyecto es el trabajo final para la asignatura de Programación en **Santo Tomás**. Se trata de una aplicación de escritorio diseñada para gestionar conciertos y eventos musicales, aplicando estándares de industria en arquitectura y persistencia de datos.
 
 ---
 
